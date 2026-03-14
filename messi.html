@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lionel Messi — The Weight of the Star</title>
+  <meta name="description" content="A prestige digital biography of Lionel Messi. Career, family, achievements, and the legacy of the greatest footballer.">
+  <link href="./messi_files/css2" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: hsl(222, 47%, 7%);
+      --fg: hsl(45, 20%, 96%);
+      --gold: hsl(43, 52%, 56%);
+      --gold-20: hsla(43, 52%, 56%, 0.2);
+      --gold-30: hsla(43, 52%, 56%, 0.3);
+      --gold-40: hsla(43, 52%, 56%, 0.4);
+      --slate: hsl(215, 25%, 27%);
+      --muted: hsl(215, 20%, 55%);
+      --card: hsl(222, 47%, 10%);
+      --card-hover: hsl(222, 35%, 16%);
+      --midnight-light: hsl(222, 40%, 12%);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Instrument Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      text-wrap: balance;
+    }
+
+    .font-display { font-family: 'Cormorant Garamond', serif; }
+    .tabular { font-variant-numeric: tabular-nums; }
+
+    /* === NAV === */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 2rem;
+      background: hsla(222, 47%, 7%, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gold-20);
+    }
+    .navbar .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--gold); letter-spacing: 0.05em; }
+    .navbar .nav-links { display: flex; gap: 2rem; }
+    .navbar .nav-links a {
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em;
+      color: var(--muted); text-decoration: none; transition: color 0.5s;
+    }
+    .navbar .nav-links a:hover { color: var(--gold); }
+    @media (max-width: 768px) { .navbar .nav-links { display: none; } }
+
+    /* === GOLDEN THREAD === */
+    .golden-thread {
+      position: fixed; left: 2rem; top: 0; bottom: 0; width: 1px; z-index: 40;
+      background: var(--gold-20);
+    }
+    .golden-thread-fill {
+      position: absolute; top: 0; left: 0; width: 100%; height: 0%;
+      background: var(--gold);
+      transition: height 0.1s linear;
+    }
+    @media (max-width: 1024px) { .golden-thread { display: none; } }
+
+    /* === HERO === */
+    .hero {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .hero-bg-text {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      pointer-events: none; user-select: none;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(4rem, 12vw, 16rem);
+      font-weight: 300; letter-spacing: -0.05em; line-height: 0.9;
+      color: var(--fg); opacity: 0.06; text-transform: uppercase;
+    }
+    .hero-image {
+      position: relative; z-index: 10; width: 100%; max-width: 28rem; margin: 0 auto; padding: 0 2rem;
+    }
+    .hero-image img { width: 100%; height: auto; box-shadow: 0 20px 50px -12px rgba(0,0,0,0.5); }
+    .hero-text {
+      position: absolute; bottom: 10vh; left: 0; right: 0; z-index: 20; text-align: center; padding: 0 1.5rem;
+    }
+    .hero-text h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 6rem);
+      font-weight: 300; letter-spacing: -0.02em; line-height: 0.95;
+      color: var(--gold); margin-bottom: 1rem;
+    }
+    .hero-text p { color: var(--muted); font-size: 1.125rem; max-width: 42rem; margin: 0 auto; line-height: 1.7; }
+    .hero-thread { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 1px; height: 5rem;
+      background: linear-gradient(to bottom, transparent, var(--gold) 10%, var(--gold) 90%, transparent);
+    }
+
+    /* === SECTIONS === */
+    section { padding: 20vh 1.5rem; }
+    .section-title { font-size: clamp(2.5rem, 6vw, 6rem); font-weight: 300; letter-spacing: -0.02em; line-height: 0.95; color: var(--gold); margin-bottom: 1rem; }
+    .section-subtitle { color: var(--muted); max-width: 60ch; margin: 0 auto; }
+
+    /* === STATS === */
+    .stats-grid { max-width: 64rem; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    @media (min-width: 768px) { .stats-grid { grid-template-columns: repeat(4, 1fr); gap: 3rem; } }
+    .stat-card { text-align: center; border-top: 1px solid var(--gold-20); padding-top: 2rem; }
+    .stat-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 6rem);
+      font-weight: 300; color: var(--gold);
+      font-variant-numeric: tabular-nums;
+    }
+    .stat-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted); margin-top: 0.5rem; }
+
+    /* === TIMELINE === */
+    .timeline { max-width: 64rem; margin: 0 auto; position: relative; }
+    .timeline-line {
+      position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; transform: translateX(-50%);
+      background: linear-gradient(to bottom, transparent, var(--gold) 10%, var(--gold) 90%, transparent);
+    }
+    @media (max-width: 768px) { .timeline-line { display: none; } }
+    .timeline-item { display: flex; flex-direction: column; margin-bottom: 5rem; }
+    @media (min-width: 768px) {
+      .timeline-item { flex-direction: row; align-items: flex-start; }
+      .timeline-item:nth-child(even) { flex-direction: row-reverse; }
+      .timeline-item .timeline-content { width: 50%; }
+      .timeline-item:nth-child(odd) .timeline-content { padding-right: 4rem; text-align: right; }
+      .timeline-item:nth-child(even) .timeline-content { padding-left: 4rem; }
+      .timeline-item .timeline-spacer { width: 50%; }
+    }
+    .timeline-dot {
+      display: none; width: 0.75rem; height: 0.75rem; background: var(--gold);
+      border-radius: 50%; margin-top: 1rem; box-shadow: 0 0 12px var(--gold-40);
+      flex-shrink: 0;
+    }
+    @media (min-width: 768px) { .timeline-dot { display: block; } }
+    .timeline-year { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: var(--gold-40); margin-bottom: 0.5rem; }
+    .timeline-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--fg); margin-bottom: 0.75rem; }
+    .timeline-desc { color: var(--muted); font-size: 0.875rem; line-height: 1.7; }
+
+    /* === FAMILY === */
+    .family-section { background: var(--midnight-light); }
+    .family-grid { max-width: 72rem; margin: 0 auto; display: grid; gap: 3rem; align-items: center; }
+    @media (min-width: 768px) { .family-grid { grid-template-columns: 1fr 1fr; } }
+    .family-image img { width: 100%; box-shadow: 0 20px 50px -12px rgba(0,0,0,0.5); }
+    .family-member { border-top: 1px solid var(--gold-20); padding-top: 1.5rem; }
+    .family-member + .family-member { margin-top: 1.5rem; }
+    .family-name { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--fg); display: inline; }
+    .family-role { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold); margin-left: 0.75rem; }
+    .family-detail { color: var(--muted); font-size: 0.875rem; margin-top: 0.25rem; }
+
+    /* === TROPHIES === */
+    .trophy-header { max-width: 72rem; margin: 0 auto; display: grid; gap: 4rem; align-items: start; margin-bottom: 5rem; }
+    @media (min-width: 768px) { .trophy-header { grid-template-columns: 1fr 1fr; } }
+    .trophy-header img { width: 100%; max-width: 24rem; margin-left: auto; box-shadow: 0 20px 50px -12px rgba(0,0,0,0.5); }
+    .trophy-grid {
+      max-width: 72rem; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr; gap: 1px;
+      background: var(--gold-20);
+    }
+    @media (min-width: 640px) { .trophy-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .trophy-grid { grid-template-columns: repeat(3, 1fr); } }
+    .trophy-card {
+      background: var(--card); border-top: 1px solid var(--gold-30); padding: 2rem;
+      transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .trophy-card:hover { background: var(--card-hover); transform: translateY(-4px); }
+    .trophy-top { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 0.75rem; }
+    .trophy-count { font-family: 'Cormorant Garamond', serif; font-size: 2.25rem; color: var(--gold); font-variant-numeric: tabular-nums; }
+    .trophy-type { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted); }
+    .trophy-title { font-family: 'Cormorant Garamond', serif; font-size: 1.125rem; color: var(--fg); margin-bottom: 0.25rem; }
+    .trophy-year { color: var(--muted); font-size: 0.75rem; }
+
+    /* === FOOTER === */
+    footer { padding: 4rem 1.5rem; border-top: 1px solid var(--gold-20); text-align: center; }
+    .footer-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--gold); margin-bottom: 1rem; }
+    .footer-attr { color: var(--muted); font-size: 0.875rem; }
+    .footer-bottom { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--gold-20); }
+    .footer-bottom p { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted); }
+
+    /* === ANIMATIONS === */
+    .fade-up {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1), transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-left { opacity: 0; transform: translateX(-30px); transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1), transform 1s cubic-bezier(0.23, 1, 0.32, 1); }
+    .fade-left.visible { opacity: 1; transform: translateX(0); }
+    .fade-right { opacity: 0; transform: translateX(30px); transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1), transform 1s cubic-bezier(0.23, 1, 0.32, 1); }
+    .fade-right.visible { opacity: 1; transform: translateX(0); }
+
+    .stagger-1 { transition-delay: 0s; }
+    .stagger-2 { transition-delay: 0.1s; }
+    .stagger-3 { transition-delay: 0.2s; }
+    .stagger-4 { transition-delay: 0.3s; }
+    .stagger-5 { transition-delay: 0.4s; }
+    .stagger-6 { transition-delay: 0.5s; }
+    .stagger-7 { transition-delay: 0.6s; }
+    .stagger-8 { transition-delay: 0.7s; }
+  </style>
+
+<style>
+	@font-face {
+		font-family: 'CameraPlainVariable';
+		src: url('https://cdn.gpteng.co/mcp-widgets/v1/fonts/CameraPlainVariable.woff2') format('woff2');
+		font-weight: 100 900;
+		font-style: normal;
+		font-display: swap;
+	}
+
+	#lovable-badge {
+		--badge-bg: #1b1b1b;
+		--badge-text: #c5c1b9;
+		--badge-text-hover: #dcdad5;
+		--badge-radius: 6px;
+		--badge-padding: 8px;
+		--badge-gap: 6px;
+		--badge-shadow: 
+			0 0 0 1px rgba(0, 0, 0, 0.88),
+			0 1px 0 0 rgba(0, 0, 0, 0.04),
+			0 2px 2px -1px rgba(0, 0, 0, 0.08),
+			0 4px 4px -2px rgba(0, 0, 0, 0.08),
+			0 8px 8px -4px rgba(0, 0, 0, 0.08),
+			0 16px 16px -8px rgba(0, 0, 0, 0.08);
+		--badge-transition-duration: 0.2s;
+		--badge-transition-easing: cubic-bezier(0.16, 1, 0.32, 1);
+		--focus-color: #575ECF;
+		--focus-offset: 2px;
+		--focus-width: 2px;
+		
+		position: fixed;
+		bottom: 12px;
+		right: 12px;
+		height: 24px;
+		display: flex;
+		align-items: center;
+		z-index: 1000000;
+		background-color: var(--badge-bg);
+		color: var(--badge-text);
+		border-radius: var(--badge-radius);
+		box-shadow: var(--badge-shadow);
+		font-size: 12px;
+		font-family: CameraPlainVariable, "CameraPlainVariable Fallback", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+		font-weight: 400 !important;
+		text-transform: none !important;
+		font-feature-settings: normal !important;
+		transform: translateZ(0);
+		will-change: transform, opacity;
+	}
+
+	#lovable-badge-cta {
+		display: flex;
+		align-items: center;
+		gap: var(--badge-gap);
+		padding: 0 var(--badge-padding);
+		height: 100%;
+		color: inherit;
+		text-decoration: none;
+		white-space: nowrap;
+		border-radius: var(--badge-radius) 0 0 var(--badge-radius);
+		transition: 
+			background-color var(--badge-transition-duration) ease,
+			color var(--badge-transition-duration) ease,
+			transform 0.1s ease;
+	}
+
+	#lovable-badge-cta:hover {
+		background: rgba(255, 255, 255, 0.04);
+		color: var(--badge-text-hover);
+	}
+
+	#lovable-badge-cta:active {
+		transform: scale(0.98);
+	}
+
+	#lovable-badge-cta:focus {
+		outline: none;
+	}
+
+	#lovable-badge-cta:focus-visible {
+		outline: var(--focus-width) solid var(--focus-color);
+		outline-offset: var(--focus-offset);
+		z-index: 1;
+	}
+
+	#lovable-badge-text {
+		line-height: 1;
+	}
+
+	#lovable-badge-divider {
+		width: 1px;
+		height: 24px;
+		background-color: rgba(255, 255, 255, 0.04);
+		flex-shrink: 0;
+	}
+
+	#lovable-badge-close {
+		width: 24px;
+		height: 24px;
+		min-width: 24px;
+		min-height: 24px;
+		cursor: pointer;
+		background: none;
+		border: none;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 0 var(--badge-radius) var(--badge-radius) 0;
+		flex-shrink: 0;
+		transition: 
+			background-color var(--badge-transition-duration) ease,
+			transform 0.1s ease;
+	}
+
+	#lovable-badge-close:hover {
+		background: rgba(255, 255, 255, 0.04);
+	}
+
+	#lovable-badge-close:active {
+		transform: scale(0.92);
+	}
+
+	#lovable-badge-close:focus {
+		outline: none;
+	}
+
+	#lovable-badge-close:focus-visible {
+		outline: var(--focus-width) solid var(--focus-color);
+		outline-offset: calc(var(--focus-offset) * -1);
+		z-index: 1;
+	}
+
+	#lovable-badge-close svg path {
+		fill: var(--badge-text);
+		transition: fill var(--badge-transition-duration) ease;
+	}
+
+	#lovable-badge-close:hover svg path {
+		fill: var(--badge-text-hover);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		#lovable-badge-cta,
+		#lovable-badge-close,
+		#lovable-badge-close svg path {
+			transition: none;
+		}
+		
+		#lovable-badge-cta:active,
+		#lovable-badge-close:active {
+			transform: none;
+		}
+	}
+
+	@media (prefers-contrast: high) {
+		#lovable-badge {
+			--badge-bg: #000;
+			--badge-text: #fff;
+			--badge-text-hover: #fff;
+			border: 2px solid currentColor;
+		}
+		
+		#lovable-badge-cta:focus-visible,
+		#lovable-badge-close:focus-visible {
+			outline-width: 3px;
+		}
+	}
+</style>
+<meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/50f95853-191f-4b41-9fe8-9ac9dbfc8f63/id-preview-626c6320--cd33d506-e4ad-41e9-a5b1-5405d1b0d8b2.lovable.app-1773483100975.png"></head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+  <span class="logo">LM10</span>
+  <div class="nav-links">
+    <a href="https://id-preview--cd33d506-e4ad-41e9-a5b1-5405d1b0d8b2.lovable.app/all.html#career">Journey</a>
+    <a href="https://id-preview--cd33d506-e4ad-41e9-a5b1-5405d1b0d8b2.lovable.app/all.html#family">Family</a>
+    <a href="https://id-preview--cd33d506-e4ad-41e9-a5b1-5405d1b0d8b2.lovable.app/all.html#achievements">Trophies</a>
+  </div>
+</nav>
+
+<!-- GOLDEN THREAD -->
+<div class="golden-thread"><div class="golden-thread-fill" id="threadFill" style="height: 0%;"></div></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-text">Lionel</div>
+  <div class="hero-image fade-up visible">
+    <img src="./messi_files/photo-1553778263-73a83bab9b0c" alt="Football player silhouette">
+  </div>
+  <div class="hero-text fade-up visible" style="transition-delay: 0.4s;">
+    <h1>The Weight of the Star</h1>
+    <p>From the streets of Rosario to the summit of the world. A record of grace, family, and the pursuit of the impossible.</p>
+  </div>
+  <div class="hero-thread"></div>
+</section>
+
+<!-- STATS -->
+<section>
+  <div class="stats-grid">
+    <div class="stat-card fade-up stagger-1 visible">
+      <div class="stat-value" data-target="838">838+</div>
+      <div class="stat-label">Goals</div>
+    </div>
+    <div class="stat-card fade-up stagger-2 visible">
+      <div class="stat-value" data-target="374">374+</div>
+      <div class="stat-label">Assists</div>
+    </div>
+    <div class="stat-card fade-up stagger-3 visible">
+      <div class="stat-value" data-target="8">8</div>
+      <div class="stat-label">Ballon d'Or</div>
+    </div>
+    <div class="stat-card fade-up stagger-4 visible">
+      <div class="stat-value" data-target="45">45+</div>
+      <div class="stat-label">Trophies</div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER TIMELINE -->
+<section id="career">
+  <div style="text-align:center; margin-bottom:6rem;">
+    <h2 class="section-title fade-up visible">The Journey</h2>
+    <p class="section-subtitle fade-up visible" style="transition-delay:0.15s;">A career that redefined what is possible on a football pitch.</p>
+  </div>
+  <div class="timeline">
+    <div class="timeline-line"></div>
+
+    <div class="timeline-item fade-up stagger-1 visible">
+      <div class="timeline-content">
+        <div class="timeline-year">1987</div>
+        <div class="timeline-title">Born in Rosario</div>
+        <div class="timeline-desc">Lionel Andrés Messi is born on June 24, 1987, in Rosario, Santa Fe, Argentina.</div>
+      </div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-spacer"></div>
+    </div>
+
+    <div class="timeline-item fade-up stagger-2 visible">
+      <div class="timeline-content">
+        <div class="timeline-year">2000</div>
+        <div class="timeline-title">Joins FC Barcelona</div>
+        <div class="timeline-desc">At age 13, Messi and his family relocate to Barcelona. He enrolls in La Masia, Barcelona's famed youth academy.</div>
+      </div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-spacer"></div>
+    </div>
+
+    <div class="timeline-item fade-up stagger-3 visible">
+      <div class="timeline-content">
+        <div class="timeline-year">2004</div>
+        <div class="timeline-title">First Team Debut</div>
+        <div class="timeline-desc">Makes his official debut for FC Barcelona at 17, beginning a legendary 21-year association with the club.</div>
+      </div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-spacer"></div>
+    </div>
+
+    <div class="timeline-item fade-up stagger-4 visible">
+      <div class="timeline-content">
+        <div class="timeline-year">2009</div>
+        <div class="timeline-title">First Ballon d'Or</div>
+        <div class="timeline-desc">Wins his first Ballon d'Or at age 22, scoring 38 goals and leading Barcelona to a historic treble.</div>
+      </div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-spacer"></div>
+    </div>
+
+    <div class="timeline-item fade-up stagger-5 visible">
+      <div class="timeline-content">
+        <div class="timeline-year">2012</div>
+        <div class="timeline-title">91 Goals in a Year</div>
+        <div class="timeline-desc">Breaks Gerd Müller's 40-year record by scoring 91 goals in a single calendar year—a feat still unmatched.</div>
+      </div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-spacer"></div>
+    </div>
+
+    <div class="timeline-item fade-up stagger-6">
+      <div class="timeline-content">
+        <div class="timeline-year">2021</div>
+        <div class="timeline-title">Copa América Champion</div>
+        <div class="timeline-desc">Finally lifts the Copa América trophy with Argentina, defeating Brazil in the final at the Maracanã.</div>
+      </div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-spacer"></div>
+    </div>
+
+    <div class="timeline-item fade-up stagger-7">
+      <div class="timeline-content">
+        <div class="timeline-year">2022</div>
+        <div class="timeline-title">World Cup Champion</div>
+        <div class="timeline-desc">Leads Argentina to FIFA World Cup glory in Qatar, defeating France in one of the greatest finals ever played.</div>
+      </div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-spacer"></div>
+    </div>
+
+    <div class="timeline-item fade-up stagger-8">
+      <div class="timeline-content">
+        <div class="timeline-year">2023</div>
+        <div class="timeline-title">Inter Miami</div>
+        <div class="timeline-desc">Joins Inter Miami CF in MLS, bringing his magic to American football and instantly transforming the league.</div>
+      </div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-spacer"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAMILY -->
+<section id="family" class="family-section">
+  <div style="text-align:center; margin-bottom:5rem;">
+    <h2 class="section-title fade-up">The Foundation</h2>
+    <p class="section-subtitle fade-up" style="transition-delay:0.15s;">Behind every triumph, a family. The quiet strength that grounds the greatest.</p>
+  </div>
+  <div class="family-grid">
+    <div class="family-image fade-left">
+      <img src="./messi_files/photo-1606092195730-5d7b9af1efc5" alt="Family portrait">
+    </div>
+    <div>
+      <div class="family-member fade-up stagger-1">
+        <span class="family-name">Antonela Roccuzzo</span><span class="family-role">Wife</span>
+        <p class="family-detail">Childhood sweetheart from Rosario. Married in 2017.</p>
+      </div>
+      <div class="family-member fade-up stagger-2">
+        <span class="family-name">Thiago Messi</span><span class="family-role">Son</span>
+        <p class="family-detail">Born November 2, 2012. The eldest of three brothers.</p>
+      </div>
+      <div class="family-member fade-up stagger-3">
+        <span class="family-name">Mateo Messi</span><span class="family-role">Son</span>
+        <p class="family-detail">Born September 11, 2015. Known for his spirited personality.</p>
+      </div>
+      <div class="family-member fade-up stagger-4">
+        <span class="family-name">Ciro Messi</span><span class="family-role">Son</span>
+        <p class="family-detail">Born March 10, 2018. The youngest of the family.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="trophy-header">
+    <div class="fade-up">
+      <h2 class="section-title">The Trophy Room</h2>
+      <p class="section-subtitle" style="margin:0;">A collection unmatched in the history of the sport. Every trophy a chapter, every medal a testament to relentless excellence across two decades.</p>
+    </div>
+    <div class="fade-right">
+      <img src="./messi_files/photo-1574629810360-7efbbe195018" alt="World Cup trophy">
+    </div>
+  </div>
+  <div class="trophy-grid">
+    <div class="trophy-card fade-up stagger-1"><div class="trophy-top"><span class="trophy-count">1</span><span class="trophy-type">International</span></div><div class="trophy-title">FIFA World Cup</div><div class="trophy-year">2022</div></div>
+    <div class="trophy-card fade-up stagger-2"><div class="trophy-top"><span class="trophy-count">2</span><span class="trophy-type">International</span></div><div class="trophy-title">Copa América</div><div class="trophy-year">2021, 2024</div></div>
+    <div class="trophy-card fade-up stagger-3"><div class="trophy-top"><span class="trophy-count">1</span><span class="trophy-type">International</span></div><div class="trophy-title">Finalissima</div><div class="trophy-year">2022</div></div>
+    <div class="trophy-card fade-up stagger-4"><div class="trophy-top"><span class="trophy-count">1</span><span class="trophy-type">International</span></div><div class="trophy-title">Olympic Gold Medal</div><div class="trophy-year">2008</div></div>
+    <div class="trophy-card fade-up stagger-5"><div class="trophy-top"><span class="trophy-count">8</span><span class="trophy-type">Individual</span></div><div class="trophy-title">Ballon d'Or</div><div class="trophy-year">2009–2023</div></div>
+    <div class="trophy-card fade-up stagger-6"><div class="trophy-top"><span class="trophy-count">4</span><span class="trophy-type">Club</span></div><div class="trophy-title">UEFA Champions League</div><div class="trophy-year">2006–2015</div></div>
+    <div class="trophy-card fade-up stagger-7"><div class="trophy-top"><span class="trophy-count">10</span><span class="trophy-type">Club</span></div><div class="trophy-title">La Liga</div><div class="trophy-year">2005–2021</div></div>
+    <div class="trophy-card fade-up stagger-8"><div class="trophy-top"><span class="trophy-count">7</span><span class="trophy-type">Club</span></div><div class="trophy-title">Copa del Rey</div><div class="trophy-year">2009–2021</div></div>
+    <div class="trophy-card fade-up stagger-1"><div class="trophy-top"><span class="trophy-count">2</span><span class="trophy-type">Club</span></div><div class="trophy-title">Ligue 1</div><div class="trophy-year">2022, 2023</div></div>
+    <div class="trophy-card fade-up stagger-2"><div class="trophy-top"><span class="trophy-count">3</span><span class="trophy-type">Club</span></div><div class="trophy-title">FIFA Club World Cup</div><div class="trophy-year">2009–2015</div></div>
+    <div class="trophy-card fade-up stagger-3"><div class="trophy-top"><span class="trophy-count">6</span><span class="trophy-type">Individual</span></div><div class="trophy-title">European Golden Shoe</div><div class="trophy-year">2010–2019</div></div>
+    <div class="trophy-card fade-up stagger-4"><div class="trophy-top"><span class="trophy-count">1</span><span class="trophy-type">Club</span></div><div class="trophy-title">Leagues Cup</div><div class="trophy-year">2023</div></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div style="max-width:64rem; margin:0 auto;">
+    <p class="footer-quote">"I am not trying to be the best in the world. I am just trying to be better than yesterday."</p>
+    <p class="footer-attr">— Lionel Messi</p>
+    <div class="footer-bottom">
+      <p>A Digital Monument · Est. 2024</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll-based golden thread
+  window.addEventListener('scroll', () => {
+    const fill = document.getElementById('threadFill');
+    if (fill) {
+      const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+      fill.style.height = pct + '%';
+    }
+  });
+
+  // Intersection Observer for fade animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '-50px' });
+
+  document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(el => observer.observe(el));
+
+  // Count-up animation for stats
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.target);
+        const duration = 2000;
+        const steps = 60;
+        const increment = target / steps;
+        let current = 0;
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            el.textContent = target + (target > 10 ? '+' : '');
+            clearInterval(timer);
+          } else {
+            el.textContent = Math.floor(current);
+          }
+        }, duration / steps);
+        countObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.stat-value[data-target]').forEach(el => countObserver.observe(el));
+</script>
+
+<script src="./messi_files/lovable.js.download" type="module"></script>
+<aside id="lovable-badge" role="complementary" dir="ltr" lang="en" aria-label="Edit with Lovable">
+	<a id="lovable-badge-cta" target="_blank" href="https://lovable.dev/projects/cd33d506-e4ad-41e9-a5b1-5405d1b0d8b2?utm_source=lovable-badge" rel="noopener" aria-label="Edit with Lovable">
+		<span id="lovable-badge-text">Edit with</span>
+		<svg xmlns="http://www.w3.org/2000/svg" width="52" height="16" fill="none" viewBox="0 0 52 16">
+  <path fill="#FCFBF8" fill-rule="evenodd" d="M20.318 5.25c.643 0 1.206.14 1.69.418a2.81 2.81 0 0 1 1.118 1.191c.266.513.4 1.115.4 1.807s-.134 1.296-.4 1.812a2.81 2.81 0 0 1-1.118 1.193c-.484.278-1.047.418-1.69.418s-1.208-.14-1.695-.418a2.85 2.85 0 0 1-1.125-1.193c-.262-.516-.393-1.12-.393-1.812s.131-1.294.393-1.807a2.848 2.848 0 0 1 1.125-1.191c.487-.279 1.052-.418 1.695-.418Zm0 1.425c-.27 0-.504.076-.7.228-.193.147-.34.37-.443.67-.102.295-.153.66-.153 1.093 0 .435.05.801.153 1.1.102.3.25.524.443.676.196.147.43.22.7.22.27 0 .502-.073.694-.22.193-.152.341-.375.443-.67.103-.299.153-.667.153-1.106 0-.65-.112-1.145-.337-1.481a1.08 1.08 0 0 0-.953-.51ZM32.7 5.25c.61 0 1.127.1 1.549.3.422.197.74.48.953.849.217.368.325.809.325 1.32v2.704c0 .29.02.562.062.812.044.245.108.4.19.466V12h-1.935a5.895 5.895 0 0 1-.105-.684 7.745 7.745 0 0 1-.02-.228 2.293 2.293 0 0 1-.151.203c-.205.242-.47.437-.793.584-.32.143-.685.215-1.094.215-.406 0-.77-.08-1.094-.24a1.845 1.845 0 0 1-.756-.682 1.984 1.984 0 0 1-.27-1.045c0-.606.178-1.069.535-1.388.356-.324.87-.534 1.542-.633l1.125-.16c.225-.032.403-.074.534-.123a.622.622 0 0 0 .288-.196.549.549 0 0 0 .093-.327.65.65 0 0 0-.11-.367.702.702 0 0 0-.32-.27c-.14-.07-.31-.105-.51-.105-.32 0-.576.083-.768.251-.193.164-.298.39-.314.676h-1.923c.016-.434.147-.82.393-1.155.25-.34.596-.604 1.039-.792.442-.189.954-.283 1.535-.283Zm.99 3.498a.98.98 0 0 1-.215.14 2.49 2.49 0 0 1-.584.178l-.473.092c-.315.061-.553.156-.713.283-.155.127-.233.305-.233.534 0 .23.084.412.252.547.168.135.383.203.645.203s.494-.058.694-.173c.201-.118.355-.282.461-.49.11-.21.166-.448.166-.714v-.6Zm4.526-2.375c.065-.125.138-.243.221-.349.197-.25.437-.44.719-.571.282-.135.6-.203.952-.203.528 0 .988.138 1.377.412.389.275.688.67.896 1.186.21.512.314 1.12.314 1.824 0 .7-.107 1.309-.32 1.825-.213.512-.518.906-.915 1.18-.393.275-.854.412-1.383.412-.352 0-.667-.062-.946-.184a1.832 1.832 0 0 1-.7-.554 2.2 2.2 0 0 1-.234-.383V12h-1.843V3h1.862v3.373Zm1.284.296c-.274 0-.51.085-.707.253-.192.163-.338.397-.436.7a3.376 3.376 0 0 0-.148 1.05c0 .406.05.759.148 1.058.098.299.243.53.436.694.197.164.433.246.707.246.279 0 .512-.082.7-.246.193-.164.336-.395.43-.694.099-.3.148-.652.148-1.058 0-.405-.05-.757-.147-1.056-.095-.299-.238-.53-.43-.694a1.015 1.015 0 0 0-.7-.253Zm9.416-1.419c.602 0 1.136.131 1.604.393.466.262.829.643 1.086 1.143.263.5.394 1.097.394 1.794 0 .25-.002.449-.006.596H47.51c.018.288.071.538.164.75a1.3 1.3 0 0 0 .491.596c.214.13.465.196.757.196.319 0 .583-.082.792-.246.209-.167.34-.403.393-.706h1.862a2.48 2.48 0 0 1-.485 1.235 2.54 2.54 0 0 1-1.051.805c-.439.188-.949.283-1.53.283-.655 0-1.225-.125-1.708-.375a2.672 2.672 0 0 1-1.13-1.143c-.267-.508-.4-1.137-.4-1.887 0-.712.14-1.327.418-1.843a2.86 2.86 0 0 1 1.155-1.186c.491-.27 1.051-.405 1.678-.405Zm-.044 1.345c-.274 0-.516.068-.725.203a1.29 1.29 0 0 0-.479.59 2.045 2.045 0 0 0-.132.498h2.562a1.873 1.873 0 0 0-.138-.602 1.061 1.061 0 0 0-.418-.516 1.243 1.243 0 0 0-.67-.173Z" clip-rule="evenodd"></path>
+  <path fill="#FCFBF8" d="m26.605 9.995 1.342-4.566h1.924L27.628 12h-2.07l-2.33-6.57h1.98l1.397 4.565Zm-13.013.143h2.256c1.632 0 1.421 1.837 1.418 1.861h-5.603V3h1.93v7.138Zm31.516 1.861h-1.862V3h1.862v8.999Z"></path>
+  <path fill="url(#a)" fill-rule="evenodd" d="M2.7 3c1.492 0 2.7 1.192 2.7 2.663v1.012h.9c1.49 0 2.7 1.192 2.7 2.662S7.791 12 6.3 12H0V5.663C0 4.193 1.209 3 2.7 3Z" clip-rule="evenodd"></path>
+  <defs>
+    <radialgradient id="a" cx="0" cy="0" r="1" gradientTransform="matrix(-1.54236 7.07838 -10.231 -2.15602 4.627 5.022)" gradientUnits="userSpaceOnUse">
+      <stop offset=".106" stop-color="#FE7B02"></stop>
+      <stop offset=".394" stop-color="#FE3F21"></stop>
+      <stop offset=".608" stop-color="#F858BC"></stop>
+      <stop offset=".929" stop-color="#575ECF"></stop>
+    </radialgradient>
+  </defs>
+</svg>
+
+
+	</a>
+	
+	<span id="lovable-badge-divider" aria-hidden="true"></span>
+	
+	<button id="lovable-badge-close" aria-label="Dismiss" title="Dismiss" type="button">
+		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+			<path d="M10.646 4.646a.5.5 0 1 1 .707.708L8.707 8l2.646 2.646a.5.5 0 1 1-.707.707L8 8.707l-2.646 2.646a.5.5 0 1 1-.708-.707L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708L8 7.293l2.646-2.647Z"></path>
+		</svg>
+	</button>
+</aside>
+<script>
+	// Don't show the lovable-badge if the page is in an iframe or if it's being rendered by puppeteer (screenshot service)
+	if (window.self !== window.top || navigator.userAgent.includes('puppeteer')) {
+		// the page is in an iframe
+		var badge = document.getElementById('lovable-badge');
+		if (badge) {
+			badge.style.display = 'none';
+		}
+	}
+
+	// Add click event listener to close button with animation
+	var closeButton = document.getElementById('lovable-badge-close');
+	if (closeButton) {
+		closeButton.addEventListener('click', function(event) {
+			event.preventDefault();
+			event.stopPropagation();
+			var badge = document.getElementById('lovable-badge');
+			if (badge) {
+				badge.classList.add('closing');
+				setTimeout(function() {
+					if (badge) {
+						badge.style.display = 'none';
+					}
+				}, 240);
+			}
+		});
+	}
+</script>
+
+
+</body></html>
